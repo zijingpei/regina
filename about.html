@@ -16,6 +16,7 @@
 }
 
 body {
+  margin: 0;
   font-family: "waverly-cf", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -115,5 +116,143 @@ font-style: normal;
   color: #6FA8FF;
 }
 
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+  }
+
+.container {
+    display: flex;
+    gap: 100px;
+    max-width: 900px;
+    width: 100%;
+    justify-content: center;
+  }
+
+.col {
+    flex: 1;
+  }
+
+.section-title {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-top: 40px;
+  }
 
 </style>
+
+
+
+
+
+
+<script>
+const slider = document.getElementById("slider");
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener("mousedown", function(e) {
+  isDown = true;
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener("mouseleave", function() {
+  isDown = false;
+});
+
+slider.addEventListener("mouseup", function() {
+  isDown = false;
+});
+
+slider.addEventListener("mousemove", function(e) {
+  if (!isDown) return;
+  e.preventDefault();
+
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 1.8;
+  slider.scrollLeft = scrollLeft - walk;
+});
+</script>
+</head>
+
+
+
+
+
+
+<body>
+
+<header class="header">
+
+  <div class="collection-area">
+    <div class="collection-trigger">Collections</div>
+
+    <div class="collection-menu">
+      <div class="collection-list">
+        <a href="index.html">Collection 1</a>
+        <a href="collection2.html">Collection 2</a>
+        <a href="collection3.html">Collection 3</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="logo">Zijing Pei</div>
+
+  <nav class="icons">
+    <a href="https://www.instagram.com/zijingpei/" target="_blank" rel="noopener noreferrer" class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="black" viewBox="0 0 24 24">
+      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.75-2.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
+    </svg>
+    </a>
+    <a href="about.html" class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="black" viewBox="0 0 24 24">
+      <path d="M12 12c2.7 0 4.5-2.1 4.5-4.5S14.7 3 12 3 7.5 5.1 7.5 7.5 9.3 12 12 12zm0 2c-3 0-9 1.5-9 4.5V21h18v-2.5c0-3-6-4.5-9-4.5z"/>
+    </svg>
+    </a>
+  </nav>
+
+</header>
+
+<main>
+
+<div class="page">
+  <div class="container">
+
+    <div class="col">
+      <div class="section-title">Bio</div>
+        I am a womenswear designer whose practice explores the relationship between structure, space, memory, and the body. My work often begins with personal experience, my upbringing, and cultural observation, translating domestic spaces, emotional memories, spiritual symbolism, and systems of order within everyday environments into silhouettes, structures, and material languages.
+        With experience in New York and Shanghai, I have contributed to design development, material research, and brand communication. These experiences have led me to focus more deeply on how conceptual research can be translated into pattern, construction, and contemporary womenswear. Through clothing, I hope to connect personal narrative, spatial perception, and bodily experience, developing a design practice that carries structural thinking, emotional sensitivity, and a contemporary context.
+    </div>
+
+    <div class="col">
+        <div class="section-title">Contact</div>
+          <p>Email: peizijing148@gmail.com</p>
+          <p>Instagram: @peizijing148</p>
+    </div>
+  </div>
+</div>
+
+</main>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
